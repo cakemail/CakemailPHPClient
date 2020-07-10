@@ -1,5 +1,5 @@
 {
-    "name": "cakemail/CakemailPHPClient",
+    "name": "cakemail/cakemail-php-client",
     "description": "The Cakemail API exposes multiple APIs including Authentication, Marketing, Contact, Transactional, Analytic, Content, Account and Partner.",
     "keywords": [
         "openapitools",
