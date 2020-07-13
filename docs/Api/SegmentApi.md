@@ -4,30 +4,24 @@ All URIs are relative to *https://api.cakemail.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSegment**](SegmentApi.md#createSegment) | **POST** /lists/{list_id}/segments | Create a segment
-[**deleteSegment**](SegmentApi.md#deleteSegment) | **DELETE** /lists/{list_id}/segments/{segment_id} | Delete a segment
-[**getSegment**](SegmentApi.md#getSegment) | **GET** /lists/{list_id}/segments/{segment_id} | Show a segment details
-[**listSegments**](SegmentApi.md#listSegments) | **GET** /lists/{list_id}/segments | Show all segments
-[**patchSegment**](SegmentApi.md#patchSegment) | **PATCH** /lists/{list_id}/segments/{segment_id} | Update a segment
+[**createSegment**](SegmentApi.md#createsegment) | **POST** /lists/{list_id}/segments | Create a segment
+[**deleteSegment**](SegmentApi.md#deletesegment) | **DELETE** /lists/{list_id}/segments/{segment_id} | Delete a segment
+[**getSegment**](SegmentApi.md#getsegment) | **GET** /lists/{list_id}/segments/{segment_id} | Show a segment details
+[**listSegments**](SegmentApi.md#listsegments) | **GET** /lists/{list_id}/segments | Show all segments
+[**patchSegment**](SegmentApi.md#patchsegment) | **PATCH** /lists/{list_id}/segments/{segment_id} | Update a segment
 
-
-
-## createSegment
-
-> \Cakemail\Model\CreateSegmentResponse createSegment($list_id, $segment, $account_id)
+# **createSegment**
+> \Cakemail\Model\CreateSegmentResponse createSegment($body, $list_id, $account_id)
 
 Create a segment
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\SegmentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -35,12 +29,12 @@ $apiInstance = new Cakemail\Api\SegmentApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \Cakemail\Model\Segment(); // \Cakemail\Model\Segment | 
 $list_id = 56; // int | 
-$segment = new \Cakemail\Model\Segment(); // \Cakemail\Model\Segment | 
 $account_id = 56; // int | 
 
 try {
-    $result = $apiInstance->createSegment($list_id, $segment, $account_id);
+    $result = $apiInstance->createSegment($body, $list_id, $account_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentApi->createSegment: ', $e->getMessage(), PHP_EOL;
@@ -50,11 +44,10 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Cakemail\Model\Segment**](../Model/Segment.md)|  |
  **list_id** | **int**|  |
- **segment** | [**\Cakemail\Model\Segment**](../Model/Segment.md)|  |
  **account_id** | **int**|  | [optional]
 
 ### Return type
@@ -67,30 +60,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## deleteSegment
-
+# **deleteSegment**
 > \Cakemail\Model\DeleteSegmentResponse deleteSegment($list_id, $segment_id, $account_id)
 
 Delete a segment
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\SegmentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -113,7 +99,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -130,30 +115,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## getSegment
-
+# **getSegment**
 > \Cakemail\Model\SegmentResponse getSegment($list_id, $segment_id, $account_id)
 
 Show a segment details
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\SegmentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -176,7 +154,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -193,30 +170,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## listSegments
-
+# **listSegments**
 > \Cakemail\Model\SegmentsResponse listSegments($list_id, $account_id, $page, $per_page, $with_count)
 
 Show all segments
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\SegmentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -241,7 +211,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -260,30 +229,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## patchSegment
-
-> \Cakemail\Model\PatchSegmentResponse patchSegment($list_id, $segment_id, $update_segment, $account_id)
+# **patchSegment**
+> \Cakemail\Model\PatchSegmentResponse patchSegment($body, $list_id, $segment_id, $account_id)
 
 Update a segment
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\SegmentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -291,13 +253,13 @@ $apiInstance = new Cakemail\Api\SegmentApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \Cakemail\Model\UpdateSegment(); // \Cakemail\Model\UpdateSegment | 
 $list_id = 56; // int | 
 $segment_id = 56; // int | 
-$update_segment = new \Cakemail\Model\UpdateSegment(); // \Cakemail\Model\UpdateSegment | 
 $account_id = 56; // int | 
 
 try {
-    $result = $apiInstance->patchSegment($list_id, $segment_id, $update_segment, $account_id);
+    $result = $apiInstance->patchSegment($body, $list_id, $segment_id, $account_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SegmentApi->patchSegment: ', $e->getMessage(), PHP_EOL;
@@ -307,12 +269,11 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Cakemail\Model\UpdateSegment**](../Model/UpdateSegment.md)|  |
  **list_id** | **int**|  |
  **segment_id** | **int**|  |
- **update_segment** | [**\Cakemail\Model\UpdateSegment**](../Model/UpdateSegment.md)|  |
  **account_id** | **int**|  | [optional]
 
 ### Return type
@@ -325,10 +286,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

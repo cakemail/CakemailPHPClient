@@ -4,31 +4,25 @@ All URIs are relative to *https://api.cakemail.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAccountStats**](ReportApi.md#getAccountStats) | **GET** /reports/accounts/{account_id} | Show an account report
-[**getCampaignLinksStats**](ReportApi.md#getCampaignLinksStats) | **GET** /reports/campaigns/{campaign_id}/links | Show campaign links report
-[**getCampaignStats**](ReportApi.md#getCampaignStats) | **GET** /reports/campaigns/{campaign_id} | Show campaign report
-[**getEmailsStats**](ReportApi.md#getEmailsStats) | **GET** /reports/emails | Show transactional email report
-[**getListStats**](ReportApi.md#getListStats) | **GET** /reports/lists/{list_id} | Show list report
-[**getSelfAccountStats**](ReportApi.md#getSelfAccountStats) | **GET** /reports/accounts/self | Show my account report
+[**getAccountStats**](ReportApi.md#getaccountstats) | **GET** /reports/accounts/{account_id} | Show an account report
+[**getCampaignLinksStats**](ReportApi.md#getcampaignlinksstats) | **GET** /reports/campaigns/{campaign_id}/links | Show campaign links report
+[**getCampaignStats**](ReportApi.md#getcampaignstats) | **GET** /reports/campaigns/{campaign_id} | Show campaign report
+[**getEmailsStats**](ReportApi.md#getemailsstats) | **GET** /reports/emails | Show transactional email report
+[**getListStats**](ReportApi.md#getliststats) | **GET** /reports/lists/{list_id} | Show list report
+[**getSelfAccountStats**](ReportApi.md#getselfaccountstats) | **GET** /reports/accounts/self | Show my account report
 
-
-
-## getAccountStats
-
+# **getAccountStats**
 > \Cakemail\Model\AccountStatsResponse getAccountStats($account_id, $start_time, $end_time)
 
 Show an account report
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ReportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -51,7 +45,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**|  |
@@ -68,30 +61,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## getCampaignLinksStats
-
+# **getCampaignLinksStats**
 > \Cakemail\Model\CampaignLinksStatsResponse getCampaignLinksStats($campaign_id, $account_id, $start_time, $end_time, $page, $per_page, $with_count, $sort)
 
 Show campaign links report
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ReportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -106,7 +92,7 @@ $end_time = 56; // int |
 $page = 1; // int | 
 $per_page = 50; // int | 
 $with_count = false; // bool | 
-$sort = 'sort_example'; // string | Sort term and direction, using syntax `[-|+]term`.  Valid terms:   - `unique`   - `total`   - `link`
+$sort = "sort_example"; // string | Sort term and direction, using syntax `[-|+]term`.  Valid terms:   - `unique`   - `total`   - `link`
 
 try {
     $result = $apiInstance->getCampaignLinksStats($campaign_id, $account_id, $start_time, $end_time, $page, $per_page, $with_count, $sort);
@@ -118,7 +104,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -141,30 +126,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## getCampaignStats
-
+# **getCampaignStats**
 > \Cakemail\Model\CampaignStatsResponse getCampaignStats($campaign_id, $account_id)
 
 Show campaign report
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ReportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -186,7 +164,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **int**|  |
@@ -202,30 +179,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## getEmailsStats
-
+# **getEmailsStats**
 > \Cakemail\Model\EmailStatsResponse getEmailsStats($start_time, $end_time, $account_id)
 
 Show transactional email report
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ReportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -248,7 +218,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start_time** | **int**|  |
@@ -265,30 +234,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## getListStats
-
+# **getListStats**
 > \Cakemail\Model\ListStatsResponse getListStats($list_id, $account_id)
 
 Show list report
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ReportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -310,7 +272,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -326,30 +287,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## getSelfAccountStats
-
+# **getSelfAccountStats**
 > \Cakemail\Model\AccountStatsResponse getSelfAccountStats($start_time, $end_time)
 
 Show my account report
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ReportApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -371,7 +325,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start_time** | **int**|  |
@@ -387,10 +340,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

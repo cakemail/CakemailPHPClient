@@ -4,27 +4,21 @@ All URIs are relative to *https://api.cakemail.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getSelfAccount**](AccountApi.md#getSelfAccount) | **GET** /accounts/self | Show my account details
-[**patchSelfAccount**](AccountApi.md#patchSelfAccount) | **PATCH** /accounts/self | Update my account
+[**getSelfAccount**](AccountApi.md#getselfaccount) | **GET** /accounts/self | Show my account details
+[**patchSelfAccount**](AccountApi.md#patchselfaccount) | **PATCH** /accounts/self | Update my account
 
-
-
-## getSelfAccount
-
+# **getSelfAccount**
 > \Cakemail\Model\AccountResponse getSelfAccount()
 
 Show my account details
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\AccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -43,7 +37,6 @@ try {
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -56,30 +49,23 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## patchSelfAccount
-
-> \Cakemail\Model\AccountResponse patchSelfAccount($patch_self_account)
+# **patchSelfAccount**
+> \Cakemail\Model\AccountResponse patchSelfAccount($body)
 
 Update my account
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\AccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -87,10 +73,10 @@ $apiInstance = new Cakemail\Api\AccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$patch_self_account = new \Cakemail\Model\PatchSelfAccount(); // \Cakemail\Model\PatchSelfAccount | 
+$body = new \Cakemail\Model\PatchSelfAccount(); // \Cakemail\Model\PatchSelfAccount | 
 
 try {
-    $result = $apiInstance->patchSelfAccount($patch_self_account);
+    $result = $apiInstance->patchSelfAccount($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->patchSelfAccount: ', $e->getMessage(), PHP_EOL;
@@ -100,10 +86,9 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **patch_self_account** | [**\Cakemail\Model\PatchSelfAccount**](../Model/PatchSelfAccount.md)|  |
+ **body** | [**\Cakemail\Model\PatchSelfAccount**](../Model/PatchSelfAccount.md)|  |
 
 ### Return type
 
@@ -115,10 +100,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

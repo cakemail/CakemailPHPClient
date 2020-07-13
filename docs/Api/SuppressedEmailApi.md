@@ -4,28 +4,22 @@ All URIs are relative to *https://api.cakemail.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSuppressedEmail**](SuppressedEmailApi.md#createSuppressedEmail) | **POST** /suppressed-emails | Add a suppressed email
-[**deleteSuppressedEmail**](SuppressedEmailApi.md#deleteSuppressedEmail) | **DELETE** /suppressed-emails/{email} | Delete a suppressed email
-[**listSuppressedEmails**](SuppressedEmailApi.md#listSuppressedEmails) | **GET** /suppressed-emails | Show all suppressed emails
+[**createSuppressedEmail**](SuppressedEmailApi.md#createsuppressedemail) | **POST** /suppressed-emails | Add a suppressed email
+[**deleteSuppressedEmail**](SuppressedEmailApi.md#deletesuppressedemail) | **DELETE** /suppressed-emails/{email} | Delete a suppressed email
+[**listSuppressedEmails**](SuppressedEmailApi.md#listsuppressedemails) | **GET** /suppressed-emails | Show all suppressed emails
 
-
-
-## createSuppressedEmail
-
-> \Cakemail\Model\CreateSuppressedEmailResponse createSuppressedEmail($suppressed_email, $account_id)
+# **createSuppressedEmail**
+> \Cakemail\Model\CreateSuppressedEmailResponse createSuppressedEmail($body, $account_id)
 
 Add a suppressed email
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\SuppressedEmailApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -33,11 +27,11 @@ $apiInstance = new Cakemail\Api\SuppressedEmailApi(
     new GuzzleHttp\Client(),
     $config
 );
-$suppressed_email = new \Cakemail\Model\SuppressedEmail(); // \Cakemail\Model\SuppressedEmail | 
+$body = new \Cakemail\Model\SuppressedEmail(); // \Cakemail\Model\SuppressedEmail | 
 $account_id = 56; // int | 
 
 try {
-    $result = $apiInstance->createSuppressedEmail($suppressed_email, $account_id);
+    $result = $apiInstance->createSuppressedEmail($body, $account_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SuppressedEmailApi->createSuppressedEmail: ', $e->getMessage(), PHP_EOL;
@@ -47,10 +41,9 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **suppressed_email** | [**\Cakemail\Model\SuppressedEmail**](../Model/SuppressedEmail.md)|  |
+ **body** | [**\Cakemail\Model\SuppressedEmail**](../Model/SuppressedEmail.md)|  |
  **account_id** | **int**|  | [optional]
 
 ### Return type
@@ -63,30 +56,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## deleteSuppressedEmail
-
+# **deleteSuppressedEmail**
 > \Cakemail\Model\DeleteSuppressedEmailResponse deleteSuppressedEmail($email, $account_id)
 
 Delete a suppressed email
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\SuppressedEmailApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -94,7 +80,7 @@ $apiInstance = new Cakemail\Api\SuppressedEmailApi(
     new GuzzleHttp\Client(),
     $config
 );
-$email = 'email_example'; // string | Full email, a local part wildcard or a domain wildcard. Examples: *@domain.com, john@*, john@domain.com
+$email = "email_example"; // string | Full email, a local part wildcard or a domain wildcard. Examples: *@domain.com, john@*, john@domain.com
 $account_id = 56; // int | 
 
 try {
@@ -107,7 +93,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -124,30 +109,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## listSuppressedEmails
-
+# **listSuppressedEmails**
 > \Cakemail\Model\SuppressedEmailsResponse listSuppressedEmails($account_id, $page, $per_page, $with_count)
 
 Show all suppressed emails
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\SuppressedEmailApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -171,7 +149,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**|  | [optional]
@@ -189,10 +166,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

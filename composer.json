@@ -1,34 +1,31 @@
 {
-    "name": "cakemail/cakemail-php-client",
-    "description": "The Cakemail API exposes multiple APIs including Authentication, Marketing, Contact, Transactional, Analytic, Content, Account and Partner.",
+    "name": "cakemail/CakemailPHPClient",
+    "description": "",
     "keywords": [
-        "openapitools",
-        "openapi-generator",
-        "openapi",
+        "swagger",
         "php",
         "sdk",
-        "rest",
         "api"
     ],
-    "homepage": "https://openapi-generator.tech",
-    "license": "unlicense",
+    "homepage": "http://swagger.io",
+    "license": "proprietary",
     "authors": [
         {
-            "name": "OpenAPI-Generator contributors",
-            "homepage": "https://openapi-generator.tech"
+            "name": "Swagger and contributors",
+            "homepage": "https://github.com/swagger-api/swagger-codegen"
         }
     ],
     "require": {
-        "php": ">=7.1",
+        "php": ">=5.5",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.4",
+        "phpunit/phpunit": "^4.8",
         "squizlabs/php_codesniffer": "~2.6",
-        "friendsofphp/php-cs-fixer": "~2.12"
+        "friendsofphp/php-cs-fixer": "~1.12"
     },
     "autoload": {
         "psr-4": { "Cakemail\\" : "lib/" }

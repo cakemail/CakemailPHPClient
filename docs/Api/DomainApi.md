@@ -4,30 +4,24 @@ All URIs are relative to *https://api.cakemail.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**patchDomains**](DomainApi.md#patchDomains) | **PATCH** /brands/default/domains/default | Change domains
-[**showDomains**](DomainApi.md#showDomains) | **GET** /brands/default/domains/default | Show domains
-[**validateDomains**](DomainApi.md#validateDomains) | **GET** /brands/default/domains/default/validate | Validate domains
+[**patchDomains**](DomainApi.md#patchdomains) | **PATCH** /brands/default/domains/default | Change domains
+[**showDomains**](DomainApi.md#showdomains) | **GET** /brands/default/domains/default | Show domains
+[**validateDomains**](DomainApi.md#validatedomains) | **GET** /brands/default/domains/default/validate | Validate domains
 
-
-
-## patchDomains
-
-> \Cakemail\Model\PatchDomainsResponse patchDomains($patch_domains, $account_id)
+# **patchDomains**
+> \Cakemail\Model\PatchDomainsResponse patchDomains($body, $account_id)
 
 Change domains
 
 Change the Tracking and Bounce domains.
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\DomainApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -35,11 +29,11 @@ $apiInstance = new Cakemail\Api\DomainApi(
     new GuzzleHttp\Client(),
     $config
 );
-$patch_domains = new \Cakemail\Model\PatchDomains(); // \Cakemail\Model\PatchDomains | 
+$body = new \Cakemail\Model\PatchDomains(); // \Cakemail\Model\PatchDomains | 
 $account_id = 56; // int | 
 
 try {
-    $result = $apiInstance->patchDomains($patch_domains, $account_id);
+    $result = $apiInstance->patchDomains($body, $account_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DomainApi->patchDomains: ', $e->getMessage(), PHP_EOL;
@@ -49,10 +43,9 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **patch_domains** | [**\Cakemail\Model\PatchDomains**](../Model/PatchDomains.md)|  |
+ **body** | [**\Cakemail\Model\PatchDomains**](../Model/PatchDomains.md)|  |
  **account_id** | **int**|  | [optional]
 
 ### Return type
@@ -65,16 +58,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## showDomains
-
+# **showDomains**
 > \Cakemail\Model\DomainsResponse showDomains($account_id)
 
 Show domains
@@ -82,15 +71,12 @@ Show domains
 Show the Tracking and Bounce domains.
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\DomainApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -111,7 +97,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**|  | [optional]
@@ -126,16 +111,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## validateDomains
-
+# **validateDomains**
 > \Cakemail\Model\ValidateDomainsResponse validateDomains($account_id)
 
 Validate domains
@@ -143,15 +124,12 @@ Validate domains
 Validate and return the DNS entries for the Tracking and the Bounce domains.
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\DomainApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -172,7 +150,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**|  | [optional]
@@ -187,10 +164,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

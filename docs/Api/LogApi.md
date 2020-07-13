@@ -4,28 +4,22 @@ All URIs are relative to *https://api.cakemail.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCampaignLogs**](LogApi.md#getCampaignLogs) | **GET** /logs/campaigns/{campaign_id} | Show campaign logs
-[**getEmailLogs**](LogApi.md#getEmailLogs) | **GET** /logs/emails | Show transactional email logs
-[**getListLogs**](LogApi.md#getListLogs) | **GET** /logs/lists/{list_id} | Show list logs
+[**getCampaignLogs**](LogApi.md#getcampaignlogs) | **GET** /logs/campaigns/{campaign_id} | Show campaign logs
+[**getEmailLogs**](LogApi.md#getemaillogs) | **GET** /logs/emails | Show transactional email logs
+[**getListLogs**](LogApi.md#getlistlogs) | **GET** /logs/lists/{list_id} | Show list logs
 
-
-
-## getCampaignLogs
-
+# **getCampaignLogs**
 > \Cakemail\Model\CampaignLogsResponse getCampaignLogs($campaign_id, $account_id, $start_time, $end_time, $page, $per_page, $with_count, $filter, $sort)
 
 Show campaign logs
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\LogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -40,8 +34,8 @@ $end_time = 56; // int |
 $page = 1; // int | 
 $per_page = 50; // int | 
 $with_count = false; // bool | 
-$filter = 'filter_example'; // string | Valid Terms:   - `additional_info`   - `link_id`   - `contact_id`   - `email`   - `uniques`   - `log_id`   - `totals`   - `type`  Valid Operators:   - `==`  Query separator:   - `;`
-$sort = 'sort_example'; // string | Sort term and direction, using syntax `[-|+]term`.  Valid terms:   - `time`   - `log_id`
+$filter = "filter_example"; // string | Valid Terms:   - `additional_info`   - `link_id`   - `contact_id`   - `email`   - `uniques`   - `log_id`   - `totals`   - `type`  Valid Operators:   - `==`  Query separator:   - `;`
+$sort = "sort_example"; // string | Sort term and direction, using syntax `[-|+]term`.  Valid terms:   - `time`   - `log_id`
 
 try {
     $result = $apiInstance->getCampaignLogs($campaign_id, $account_id, $start_time, $end_time, $page, $per_page, $with_count, $filter, $sort);
@@ -53,7 +47,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -77,30 +70,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## getEmailLogs
-
+# **getEmailLogs**
 > \Cakemail\Model\EmailLogsResponse getEmailLogs($log_type, $account_id, $start_time, $end_time, $page, $per_page, $with_count, $filter)
 
 Show transactional email logs
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\LogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -108,14 +94,14 @@ $apiInstance = new Cakemail\Api\LogApi(
     new GuzzleHttp\Client(),
     $config
 );
-$log_type = 'log_type_example'; // string | 
+$log_type = "log_type_example"; // string | 
 $account_id = 56; // int | 
 $start_time = 56; // int | 
 $end_time = 56; // int | 
 $page = 1; // int | 
 $per_page = 50; // int | 
 $with_count = false; // bool | 
-$filter = 'filter_example'; // string | Valid Terms:   - `group_id`  Valid Operators:   - `==`  Query separator:   - `;`
+$filter = "filter_example"; // string | Valid Terms:   - `group_id`  Valid Operators:   - `==`  Query separator:   - `;`
 
 try {
     $result = $apiInstance->getEmailLogs($log_type, $account_id, $start_time, $end_time, $page, $per_page, $with_count, $filter);
@@ -127,7 +113,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -150,30 +135,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## getListLogs
-
+# **getListLogs**
 > \Cakemail\Model\ListLogsResponse getListLogs($list_id, $account_id, $start_time, $end_time, $page, $per_page, $with_count, $filter)
 
 Show list logs
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\LogApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -188,7 +166,7 @@ $end_time = 56; // int |
 $page = 1; // int | 
 $per_page = 50; // int | 
 $with_count = false; // bool | 
-$filter = 'filter_example'; // string | Valid Terms:   - `additional_info`   - `contact_id`   - `email`   - `uniques`   - `track_id`   - `log_id`   - `start_id`   - `end_id`   - `totals`   - `type`  Valid Operators:   - `==`  Query separator:   - `;`
+$filter = "filter_example"; // string | Valid Terms:   - `additional_info`   - `contact_id`   - `email`   - `uniques`   - `track_id`   - `log_id`   - `start_id`   - `end_id`   - `totals`   - `type`  Valid Operators:   - `==`  Query separator:   - `;`
 
 try {
     $result = $apiInstance->getListLogs($list_id, $account_id, $start_time, $end_time, $page, $per_page, $with_count, $filter);
@@ -200,7 +178,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -223,10 +200,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

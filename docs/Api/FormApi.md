@@ -4,30 +4,24 @@ All URIs are relative to *https://api.cakemail.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createForm**](FormApi.md#createForm) | **POST** /forms | Create a form
-[**deleteForm**](FormApi.md#deleteForm) | **DELETE** /forms/{form_id} | Delete a form
-[**getForm**](FormApi.md#getForm) | **GET** /forms/{form_id} | Show a form details
-[**listForms**](FormApi.md#listForms) | **GET** /forms | Show all forms
-[**patchForm**](FormApi.md#patchForm) | **PATCH** /forms/{form_id} | Update a form
+[**createForm**](FormApi.md#createform) | **POST** /forms | Create a form
+[**deleteForm**](FormApi.md#deleteform) | **DELETE** /forms/{form_id} | Delete a form
+[**getForm**](FormApi.md#getform) | **GET** /forms/{form_id} | Show a form details
+[**listForms**](FormApi.md#listforms) | **GET** /forms | Show all forms
+[**patchForm**](FormApi.md#patchform) | **PATCH** /forms/{form_id} | Update a form
 
-
-
-## createForm
-
-> \Cakemail\Model\CreateFormResponse createForm($create_form, $account_id)
+# **createForm**
+> \Cakemail\Model\CreateFormResponse createForm($body, $account_id)
 
 Create a form
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\FormApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -35,11 +29,11 @@ $apiInstance = new Cakemail\Api\FormApi(
     new GuzzleHttp\Client(),
     $config
 );
-$create_form = new \Cakemail\Model\CreateForm(); // \Cakemail\Model\CreateForm | 
+$body = new \Cakemail\Model\CreateForm(); // \Cakemail\Model\CreateForm | 
 $account_id = 56; // int | 
 
 try {
-    $result = $apiInstance->createForm($create_form, $account_id);
+    $result = $apiInstance->createForm($body, $account_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FormApi->createForm: ', $e->getMessage(), PHP_EOL;
@@ -49,10 +43,9 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_form** | [**\Cakemail\Model\CreateForm**](../Model/CreateForm.md)|  |
+ **body** | [**\Cakemail\Model\CreateForm**](../Model/CreateForm.md)|  |
  **account_id** | **int**|  | [optional]
 
 ### Return type
@@ -65,30 +58,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## deleteForm
-
+# **deleteForm**
 > \Cakemail\Model\DeleteFormResponse deleteForm($form_id, $account_id)
 
 Delete a form
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\FormApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -96,7 +82,7 @@ $apiInstance = new Cakemail\Api\FormApi(
     new GuzzleHttp\Client(),
     $config
 );
-$form_id = 'form_id_example'; // string | 
+$form_id = "form_id_example"; // string | 
 $account_id = 56; // int | 
 
 try {
@@ -109,7 +95,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -126,30 +111,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## getForm
-
+# **getForm**
 > \Cakemail\Model\FormResponse getForm($form_id, $account_id)
 
 Show a form details
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\FormApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -157,7 +135,7 @@ $apiInstance = new Cakemail\Api\FormApi(
     new GuzzleHttp\Client(),
     $config
 );
-$form_id = 'form_id_example'; // string | 
+$form_id = "form_id_example"; // string | 
 $account_id = 56; // int | 
 
 try {
@@ -170,7 +148,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -187,30 +164,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## listForms
-
+# **listForms**
 > \Cakemail\Model\FormsResponse listForms($account_id, $page, $per_page, $with_count, $sort)
 
 Show all forms
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\FormApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -222,7 +192,7 @@ $account_id = 56; // int |
 $page = 1; // int | 
 $per_page = 50; // int | 
 $with_count = false; // bool | 
-$sort = 'sort_example'; // string | Sort term and direction, using syntax `[-|+]term`.  Valid terms:   - `name`   - `language`   - `created_on`   - `last_updated_on`   - `list_id`   - `status`
+$sort = "sort_example"; // string | Sort term and direction, using syntax `[-|+]term`.  Valid terms:   - `name`   - `language`   - `created_on`   - `last_updated_on`   - `list_id`   - `status`
 
 try {
     $result = $apiInstance->listForms($account_id, $page, $per_page, $with_count, $sort);
@@ -234,7 +204,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -254,30 +223,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## patchForm
-
-> \Cakemail\Model\PatchFormResponse patchForm($form_id, $form, $account_id)
+# **patchForm**
+> \Cakemail\Model\PatchFormResponse patchForm($body, $form_id, $account_id)
 
 Update a form
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\FormApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -285,12 +247,12 @@ $apiInstance = new Cakemail\Api\FormApi(
     new GuzzleHttp\Client(),
     $config
 );
-$form_id = 'form_id_example'; // string | 
-$form = new \Cakemail\Model\Form(); // \Cakemail\Model\Form | 
+$body = new \Cakemail\Model\Form(); // \Cakemail\Model\Form | 
+$form_id = "form_id_example"; // string | 
 $account_id = 56; // int | 
 
 try {
-    $result = $apiInstance->patchForm($form_id, $form, $account_id);
+    $result = $apiInstance->patchForm($body, $form_id, $account_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FormApi->patchForm: ', $e->getMessage(), PHP_EOL;
@@ -300,11 +262,10 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Cakemail\Model\Form**](../Model/Form.md)|  |
  **form_id** | **string**|  |
- **form** | [**\Cakemail\Model\Form**](../Model/Form.md)|  |
  **account_id** | **int**|  | [optional]
 
 ### Return type
@@ -317,10 +278,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

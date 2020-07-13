@@ -1,7 +1,6 @@
-# # CreateCampaign
+# CreateCampaign
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  | 
@@ -13,5 +12,4 @@ Name | Type | Description | Notes
 **editor** | **string** |  | [optional] [default to 'bee']
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
-
 

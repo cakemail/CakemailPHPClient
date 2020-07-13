@@ -4,29 +4,23 @@ All URIs are relative to *https://api.cakemail.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCustomAttribute**](CustomAttributeApi.md#createCustomAttribute) | **POST** /lists/{list_id}/custom-attributes | Create a custom attribute
-[**deleteCustomAttribute**](CustomAttributeApi.md#deleteCustomAttribute) | **DELETE** /lists/{list_id}/custom-attributes/{name} | Delete a custom attribute
-[**getCustomAttribute**](CustomAttributeApi.md#getCustomAttribute) | **GET** /lists/{list_id}/custom-attributes/{name} | Show a custom attribute
-[**listCustomAttributes**](CustomAttributeApi.md#listCustomAttributes) | **GET** /lists/{list_id}/custom-attributes | Show all custom attributes
+[**createCustomAttribute**](CustomAttributeApi.md#createcustomattribute) | **POST** /lists/{list_id}/custom-attributes | Create a custom attribute
+[**deleteCustomAttribute**](CustomAttributeApi.md#deletecustomattribute) | **DELETE** /lists/{list_id}/custom-attributes/{name} | Delete a custom attribute
+[**getCustomAttribute**](CustomAttributeApi.md#getcustomattribute) | **GET** /lists/{list_id}/custom-attributes/{name} | Show a custom attribute
+[**listCustomAttributes**](CustomAttributeApi.md#listcustomattributes) | **GET** /lists/{list_id}/custom-attributes | Show all custom attributes
 
-
-
-## createCustomAttribute
-
-> \Cakemail\Model\CreateAttributeResponse createCustomAttribute($list_id, $create_custom_attribute, $account_id)
+# **createCustomAttribute**
+> \Cakemail\Model\CreateAttributeResponse createCustomAttribute($body, $list_id, $account_id)
 
 Create a custom attribute
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\CustomAttributeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -34,12 +28,12 @@ $apiInstance = new Cakemail\Api\CustomAttributeApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \Cakemail\Model\CreateCustomAttribute(); // \Cakemail\Model\CreateCustomAttribute | 
 $list_id = 56; // int | 
-$create_custom_attribute = new \Cakemail\Model\CreateCustomAttribute(); // \Cakemail\Model\CreateCustomAttribute | 
 $account_id = 56; // int | 
 
 try {
-    $result = $apiInstance->createCustomAttribute($list_id, $create_custom_attribute, $account_id);
+    $result = $apiInstance->createCustomAttribute($body, $list_id, $account_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomAttributeApi->createCustomAttribute: ', $e->getMessage(), PHP_EOL;
@@ -49,11 +43,10 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Cakemail\Model\CreateCustomAttribute**](../Model/CreateCustomAttribute.md)|  |
  **list_id** | **int**|  |
- **create_custom_attribute** | [**\Cakemail\Model\CreateCustomAttribute**](../Model/CreateCustomAttribute.md)|  |
  **account_id** | **int**|  | [optional]
 
 ### Return type
@@ -66,30 +59,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## deleteCustomAttribute
-
+# **deleteCustomAttribute**
 > \Cakemail\Model\DeleteCustomAttributeResponse deleteCustomAttribute($list_id, $name, $account_id)
 
 Delete a custom attribute
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\CustomAttributeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -98,7 +84,7 @@ $apiInstance = new Cakemail\Api\CustomAttributeApi(
     $config
 );
 $list_id = 56; // int | 
-$name = 'name_example'; // string | 
+$name = "name_example"; // string | 
 $account_id = 56; // int | 
 
 try {
@@ -111,7 +97,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -129,30 +114,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## getCustomAttribute
-
+# **getCustomAttribute**
 > \Cakemail\Model\CustomAttributeResponse getCustomAttribute($list_id, $name, $account_id)
 
 Show a custom attribute
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\CustomAttributeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -161,7 +139,7 @@ $apiInstance = new Cakemail\Api\CustomAttributeApi(
     $config
 );
 $list_id = 56; // int | 
-$name = 'name_example'; // string | 
+$name = "name_example"; // string | 
 $account_id = 56; // int | 
 
 try {
@@ -174,7 +152,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -192,30 +169,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## listCustomAttributes
-
+# **listCustomAttributes**
 > \Cakemail\Model\CustomAttributesResponse listCustomAttributes($list_id, $account_id, $page, $per_page, $with_count)
 
 Show all custom attributes
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\CustomAttributeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -240,7 +210,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -259,10 +228,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

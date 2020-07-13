@@ -1,7 +1,6 @@
-# # TrackingResponse
+# TrackingResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **opens** | **bool** |  | [optional] 
@@ -10,5 +9,4 @@ Name | Type | Description | Notes
 **additional_params** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
-
 

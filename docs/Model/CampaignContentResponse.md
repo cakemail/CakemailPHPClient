@@ -1,7 +1,6 @@
-# # CampaignContentResponse
+# CampaignContentResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **subject** | **string** |  | [optional] 
@@ -15,5 +14,4 @@ Name | Type | Description | Notes
 **footer** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
-
 

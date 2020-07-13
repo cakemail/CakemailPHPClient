@@ -4,33 +4,27 @@ All URIs are relative to *https://api.cakemail.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**acceptListPolicy**](ListApi.md#acceptListPolicy) | **POST** /lists/{list_id}/accept-policy | Accept policy for a list
-[**archiveList**](ListApi.md#archiveList) | **POST** /lists/{list_id}/archive | Archive a list
-[**createList**](ListApi.md#createList) | **POST** /lists | Create a List
-[**deleteList**](ListApi.md#deleteList) | **DELETE** /lists/{list_id} | Delete a List
-[**getList**](ListApi.md#getList) | **GET** /lists/{list_id} | Show a list parameters
-[**listLists**](ListApi.md#listLists) | **GET** /lists | Show all lists
-[**patchList**](ListApi.md#patchList) | **PATCH** /lists/{list_id} | Update a list parameters
-[**unarchiveList**](ListApi.md#unarchiveList) | **POST** /lists/{list_id}/unarchive | Unarchive a list
+[**acceptListPolicy**](ListApi.md#acceptlistpolicy) | **POST** /lists/{list_id}/accept-policy | Accept policy for a list
+[**archiveList**](ListApi.md#archivelist) | **POST** /lists/{list_id}/archive | Archive a list
+[**createList**](ListApi.md#createlist) | **POST** /lists | Create a List
+[**deleteList**](ListApi.md#deletelist) | **DELETE** /lists/{list_id} | Delete a List
+[**getList**](ListApi.md#getlist) | **GET** /lists/{list_id} | Show a list parameters
+[**listLists**](ListApi.md#listlists) | **GET** /lists | Show all lists
+[**patchList**](ListApi.md#patchlist) | **PATCH** /lists/{list_id} | Update a list parameters
+[**unarchiveList**](ListApi.md#unarchivelist) | **POST** /lists/{list_id}/unarchive | Unarchive a list
 
-
-
-## acceptListPolicy
-
+# **acceptListPolicy**
 > \Cakemail\Model\AcceptListPolicyResponse acceptListPolicy($list_id, $account_id)
 
 Accept policy for a list
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ListApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -52,7 +46,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -68,30 +61,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## archiveList
-
+# **archiveList**
 > \Cakemail\Model\ArchiveListResponse archiveList($list_id, $account_id)
 
 Archive a list
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ListApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -113,7 +99,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -129,30 +114,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## createList
-
-> \Cakemail\Model\CreateListResponse createList($model_list, $account_id)
+# **createList**
+> \Cakemail\Model\CreateListResponse createList($body, $account_id)
 
 Create a List
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ListApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -160,11 +138,11 @@ $apiInstance = new Cakemail\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
-$model_list = new \Cakemail\Model\ModelList(); // \Cakemail\Model\ModelList | 
+$body = new \Cakemail\Model\ModelList(); // \Cakemail\Model\ModelList | 
 $account_id = 56; // int | 
 
 try {
-    $result = $apiInstance->createList($model_list, $account_id);
+    $result = $apiInstance->createList($body, $account_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->createList: ', $e->getMessage(), PHP_EOL;
@@ -174,10 +152,9 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model_list** | [**\Cakemail\Model\ModelList**](../Model/ModelList.md)|  |
+ **body** | [**\Cakemail\Model\ModelList**](../Model/ModelList.md)|  |
  **account_id** | **int**|  | [optional]
 
 ### Return type
@@ -190,30 +167,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## deleteList
-
+# **deleteList**
 > \Cakemail\Model\DeleteListResponse deleteList($list_id, $account_id)
 
 Delete a List
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ListApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -235,7 +205,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -251,30 +220,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## getList
-
+# **getList**
 > \Cakemail\Model\ListResponse getList($list_id, $account_id)
 
 Show a list parameters
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ListApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -296,7 +258,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -312,30 +273,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## listLists
-
+# **listLists**
 > \Cakemail\Model\ListsResponse listLists($account_id, $name, $page, $per_page, $with_count, $sort)
 
 Show all lists
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ListApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -344,11 +298,11 @@ $apiInstance = new Cakemail\Api\ListApi(
     $config
 );
 $account_id = 56; // int | 
-$name = 'name_example'; // string | 
+$name = "name_example"; // string | 
 $page = 1; // int | 
 $per_page = 50; // int | 
 $with_count = false; // bool | 
-$sort = 'sort_example'; // string | Sort term and direction, using syntax `[-|+]term`.  Valid terms:   - `name`   - `created_on`
+$sort = "sort_example"; // string | Sort term and direction, using syntax `[-|+]term`.  Valid terms:   - `name`   - `created_on`
 
 try {
     $result = $apiInstance->listLists($account_id, $name, $page, $per_page, $with_count, $sort);
@@ -360,7 +314,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -381,30 +334,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## patchList
-
-> \Cakemail\Model\PatchListResponse patchList($list_id, $update_list, $account_id)
+# **patchList**
+> \Cakemail\Model\PatchListResponse patchList($body, $list_id, $account_id)
 
 Update a list parameters
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ListApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -412,12 +358,12 @@ $apiInstance = new Cakemail\Api\ListApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \Cakemail\Model\UpdateList(); // \Cakemail\Model\UpdateList | 
 $list_id = 56; // int | 
-$update_list = new \Cakemail\Model\UpdateList(); // \Cakemail\Model\UpdateList | 
 $account_id = 56; // int | 
 
 try {
-    $result = $apiInstance->patchList($list_id, $update_list, $account_id);
+    $result = $apiInstance->patchList($body, $list_id, $account_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ListApi->patchList: ', $e->getMessage(), PHP_EOL;
@@ -427,11 +373,10 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Cakemail\Model\UpdateList**](../Model/UpdateList.md)|  |
  **list_id** | **int**|  |
- **update_list** | [**\Cakemail\Model\UpdateList**](../Model/UpdateList.md)|  |
  **account_id** | **int**|  | [optional]
 
 ### Return type
@@ -444,30 +389,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## unarchiveList
-
+# **unarchiveList**
 > \Cakemail\Model\UnarchiveListResponse unarchiveList($list_id, $account_id)
 
 Unarchive a list
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ListApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -489,7 +427,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -505,10 +442,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

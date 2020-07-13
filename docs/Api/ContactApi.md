@@ -4,33 +4,27 @@ All URIs are relative to *https://api.cakemail.dev*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createContact**](ContactApi.md#createContact) | **POST** /lists/{list_id}/contacts | Add a contact in a list
-[**deleteContact**](ContactApi.md#deleteContact) | **DELETE** /lists/{list_id}/contacts/{contact_id} | Delete a contact
-[**getContact**](ContactApi.md#getContact) | **GET** /lists/{list_id}/contacts/{contact_id} | Show a contact details
-[**importContacts**](ContactApi.md#importContacts) | **POST** /lists/{list_id}/import-contacts | Import contacts
-[**listContactsOfList**](ContactApi.md#listContactsOfList) | **GET** /lists/{list_id}/contacts | Show all contacts in a list
-[**listContactsOfSegment**](ContactApi.md#listContactsOfSegment) | **GET** /lists/{list_id}/segments/{segment_id}/contacts | Show all contacts in a segment
-[**patchContact**](ContactApi.md#patchContact) | **PATCH** /lists/{list_id}/contacts/{contact_id} | Update a contact
-[**unsubscribeContact**](ContactApi.md#unsubscribeContact) | **POST** /lists/{list_id}/contacts/{contact_id}/unsubscribe | Unsubscribe a contact from a list
+[**createContact**](ContactApi.md#createcontact) | **POST** /lists/{list_id}/contacts | Add a contact in a list
+[**deleteContact**](ContactApi.md#deletecontact) | **DELETE** /lists/{list_id}/contacts/{contact_id} | Delete a contact
+[**getContact**](ContactApi.md#getcontact) | **GET** /lists/{list_id}/contacts/{contact_id} | Show a contact details
+[**importContacts**](ContactApi.md#importcontacts) | **POST** /lists/{list_id}/import-contacts | Import contacts
+[**listContactsOfList**](ContactApi.md#listcontactsoflist) | **GET** /lists/{list_id}/contacts | Show all contacts in a list
+[**listContactsOfSegment**](ContactApi.md#listcontactsofsegment) | **GET** /lists/{list_id}/segments/{segment_id}/contacts | Show all contacts in a segment
+[**patchContact**](ContactApi.md#patchcontact) | **PATCH** /lists/{list_id}/contacts/{contact_id} | Update a contact
+[**unsubscribeContact**](ContactApi.md#unsubscribecontact) | **POST** /lists/{list_id}/contacts/{contact_id}/unsubscribe | Unsubscribe a contact from a list
 
-
-
-## createContact
-
-> \Cakemail\Model\CreateContactResponse createContact($list_id, $contact, $account_id)
+# **createContact**
+> \Cakemail\Model\CreateContactResponse createContact($body, $list_id, $account_id)
 
 Add a contact in a list
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ContactApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -38,12 +32,12 @@ $apiInstance = new Cakemail\Api\ContactApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \Cakemail\Model\Contact(); // \Cakemail\Model\Contact | 
 $list_id = 56; // int | 
-$contact = new \Cakemail\Model\Contact(); // \Cakemail\Model\Contact | 
 $account_id = 56; // int | 
 
 try {
-    $result = $apiInstance->createContact($list_id, $contact, $account_id);
+    $result = $apiInstance->createContact($body, $list_id, $account_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactApi->createContact: ', $e->getMessage(), PHP_EOL;
@@ -53,11 +47,10 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Cakemail\Model\Contact**](../Model/Contact.md)|  |
  **list_id** | **int**|  |
- **contact** | [**\Cakemail\Model\Contact**](../Model/Contact.md)|  |
  **account_id** | **int**|  | [optional]
 
 ### Return type
@@ -70,30 +63,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## deleteContact
-
+# **deleteContact**
 > \Cakemail\Model\DeleteContactResponse deleteContact($list_id, $contact_id, $account_id)
 
 Delete a contact
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ContactApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -116,7 +102,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -133,30 +118,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## getContact
-
+# **getContact**
 > \Cakemail\Model\ContactResponse getContact($list_id, $contact_id, $account_id)
 
 Show a contact details
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ContactApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -179,7 +157,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -196,32 +173,25 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## importContacts
-
-> \Cakemail\Model\ImportContactsResponse importContacts($list_id, $import_contacts, $account_id)
+# **importContacts**
+> \Cakemail\Model\ImportContactsResponse importContacts($body, $list_id, $account_id)
 
 Import contacts
 
 Synchronize your own list with Cakemail by importing to your active, unsubscribed or delete contacts.
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ContactApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -229,12 +199,12 @@ $apiInstance = new Cakemail\Api\ContactApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \Cakemail\Model\ImportContacts(); // \Cakemail\Model\ImportContacts | 
 $list_id = 56; // int | 
-$import_contacts = new \Cakemail\Model\ImportContacts(); // \Cakemail\Model\ImportContacts | 
 $account_id = 56; // int | 
 
 try {
-    $result = $apiInstance->importContacts($list_id, $import_contacts, $account_id);
+    $result = $apiInstance->importContacts($body, $list_id, $account_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactApi->importContacts: ', $e->getMessage(), PHP_EOL;
@@ -244,11 +214,10 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Cakemail\Model\ImportContacts**](../Model/ImportContacts.md)|  |
  **list_id** | **int**|  |
- **import_contacts** | [**\Cakemail\Model\ImportContacts**](../Model/ImportContacts.md)|  |
  **account_id** | **int**|  | [optional]
 
 ### Return type
@@ -261,30 +230,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## listContactsOfList
-
+# **listContactsOfList**
 > \Cakemail\Model\ContactsResponse listContactsOfList($list_id, $account_id, $page, $per_page, $with_count, $query, $sort, $filter)
 
 Show all contacts in a list
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ContactApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -297,9 +259,9 @@ $account_id = 56; // int |
 $page = 1; // int | 
 $per_page = 50; // int | 
 $with_count = false; // bool | 
-$query = 'query_example'; // string | 
-$sort = 'sort_example'; // string | Sort term and direction, using syntax `[-|+]term`.  Valid terms:   - `name`   - `email`   - `created_on`   - `scheduled_for`   - `scheduled_on`   - `type`
-$filter = 'filter_example'; // string | Valid Terms:   - `status`   - `email`  Valid Operators:   - `==`  Query separator:   - `;`
+$query = "query_example"; // string | 
+$sort = "sort_example"; // string | Sort term and direction, using syntax `[-|+]term`.  Valid terms:   - `name`   - `email`   - `created_on`   - `scheduled_for`   - `scheduled_on`   - `type`
+$filter = "filter_example"; // string | Valid Terms:   - `status`   - `email`  Valid Operators:   - `==`  Query separator:   - `;`
 
 try {
     $result = $apiInstance->listContactsOfList($list_id, $account_id, $page, $per_page, $with_count, $query, $sort, $filter);
@@ -311,7 +273,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -334,30 +295,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## listContactsOfSegment
-
+# **listContactsOfSegment**
 > \Cakemail\Model\ContactsResponse listContactsOfSegment($list_id, $segment_id, $account_id, $page, $per_page, $with_count, $sort, $query)
 
 Show all contacts in a segment
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ContactApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -371,8 +325,8 @@ $account_id = 56; // int |
 $page = 1; // int | 
 $per_page = 50; // int | 
 $with_count = false; // bool | 
-$sort = 'sort_example'; // string | 
-$query = 'query_example'; // string | 
+$sort = "sort_example"; // string | 
+$query = "query_example"; // string | 
 
 try {
     $result = $apiInstance->listContactsOfSegment($list_id, $segment_id, $account_id, $page, $per_page, $with_count, $sort, $query);
@@ -384,7 +338,6 @@ try {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -407,30 +360,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## patchContact
-
-> \Cakemail\Model\PatchContactResponse patchContact($list_id, $contact_id, $patch_contact, $account_id)
+# **patchContact**
+> \Cakemail\Model\PatchContactResponse patchContact($body, $list_id, $contact_id, $account_id)
 
 Update a contact
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ContactApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -438,13 +384,13 @@ $apiInstance = new Cakemail\Api\ContactApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \Cakemail\Model\PatchContact(); // \Cakemail\Model\PatchContact | 
 $list_id = 56; // int | 
 $contact_id = 56; // int | 
-$patch_contact = new \Cakemail\Model\PatchContact(); // \Cakemail\Model\PatchContact | 
 $account_id = 56; // int | 
 
 try {
-    $result = $apiInstance->patchContact($list_id, $contact_id, $patch_contact, $account_id);
+    $result = $apiInstance->patchContact($body, $list_id, $contact_id, $account_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactApi->patchContact: ', $e->getMessage(), PHP_EOL;
@@ -454,12 +400,11 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Cakemail\Model\PatchContact**](../Model/PatchContact.md)|  |
  **list_id** | **int**|  |
  **contact_id** | **int**|  |
- **patch_contact** | [**\Cakemail\Model\PatchContact**](../Model/PatchContact.md)|  |
  **account_id** | **int**|  | [optional]
 
 ### Return type
@@ -472,30 +417,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-
-## unsubscribeContact
-
+# **unsubscribeContact**
 > \Cakemail\Model\UnsubscribeContactResponse unsubscribeContact($list_id, $contact_id, $account_id)
 
 Unsubscribe a contact from a list
 
 ### Example
-
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Configure OAuth2 access token for authorization: OAuth2PasswordBearer
 $config = Cakemail\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Cakemail\Api\ContactApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -518,7 +456,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**|  |
@@ -535,10 +472,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

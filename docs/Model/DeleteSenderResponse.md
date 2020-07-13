@@ -1,7 +1,6 @@
-# # DeleteSenderResponse
+# DeleteSenderResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
@@ -9,5 +8,4 @@ Name | Type | Description | Notes
 **object** | **string** |  | [optional] [default to 'sender']
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
-
 
