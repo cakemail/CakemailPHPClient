@@ -1,5 +1,5 @@
 {
-    "name": "cakemail/CakemailPHPClient",
+    "name": "cakemail/cakemail-php-client",
     "description": "",
     "keywords": [
         "swagger",
@@ -24,8 +24,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
-        "squizlabs/php_codesniffer": "~2.6",
-        "friendsofphp/php-cs-fixer": "~1.12"
+        "squizlabs/php_codesniffer": "~2.6"
     },
     "autoload": {
         "psr-4": { "Cakemail\\" : "lib/" }
